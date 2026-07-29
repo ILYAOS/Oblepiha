@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Мини‑приложение MAX</title>
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background-color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 24px;
+      }
+      .buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      button {
+        padding: 14px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #1a1a1a;
+        background-color: #ff9900; /* облепиховый цвет */
+        transition: background-color 0.2s, transform 0.1s;
+      }
+      button:active {
+        transform: scale(0.98);
+      }
+      button:hover {
+        background-color: #e68a00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Выберите раздел</h1>
+      <div class="buttons-container">
+        <button onclick="openFile('МЕНЮ')">Меню</button>
+        <button onclick="openFile('НАШИ_НОМЕРА')">Наши номера</button>
+        <button onclick="openFile('САУНА')">Сауна</button>
+        <button onclick="openFile('АНОНС_МЕРОПРИЯТИЙ')">Анонс мероприятий</button>
+      </div>
+    </div>
+
+    <script>
+      // Замените эти ссылки на публичные ссылки ваших файлов на Яндекс Диске
+      const files = {
+        'МЕНЮ': 'https://disk.yandex.ru/i/zaL8A0xUebXLkg',
+        'НАШИ_НОМЕРА': 'https://disk.yandex.ru/i/u_Jx8Gz0ElFm1A',
+        'САУНА': 'https://disk.yandex.ru/i/9xBVAhDvEwVEMA',
+        'АНОНС_МЕРОПРИЯТИЙ': 'https://disk.yandex.ru/i/Cv8ln8E5qbZyaw'
+      };
+
+      function openFile(key) {
+        const url = files[key];
+        if (!url || url.includes('ВАША_ССЫЛКА')) {
+          alert('Ссылка на файл не настроена. Замените её в коде.');
+          return;
+        }
+        // MAX Bridge: открываем ссылку внутри среды MAX
+        if (window.max && window.max.openUrl) {
+          window.max.openUrl(url);
+        } else {
+          // Фоллбэк: если MAX Bridge не инициализирован — открываем в новой вкладке
+          window.open(url, '_blank');
+        }
+      }
+    </script>
+  </body>
+</html>

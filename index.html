@@ -47,7 +47,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Выберите раздел</h1>
+      <h1 id="user-id-name"></h1>
       <div class="buttons-container">
         <button onclick="openFile('МЕНЮ')">Меню</button>
         <button onclick="openFile('НАШИ_НОМЕРА')">Наши номера</button>
@@ -55,7 +55,23 @@
         <button onclick="openFile('АНОНС_МЕРОПРИЯТИЙ')">Анонс мероприятий</button>
       </div>
     </div>
-
+   <script src="https://st.max.ru/js/max-web-app.js"></script>
+  <script>
+    if (window.WebApp) {
+      window.WebApp.ready();
+      const initDataUnsafe = window.WebApp.initDataUnsafe;
+      const user = initDataUnsafe?.user;
+      if (user) {
+         const gg = user.first_name; 
+         const e2 = document.getElementById('user-id-name');
+         e2.textContent = `ID пользователя: ${gg}`;
+       else {
+      console.warn('Данные пользователя недоступны — возможно, приложение запущено не в MAX');
+    }
+  } else {
+    console.error('WebApp не определён. Проверьте, что страница открыта в MAX и скрипт загружен.');
+  }
+</script>
     <script>
       // Замените эти ссылки на публичные ссылки ваших файлов на Яндекс Диске
       const files = {

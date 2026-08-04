@@ -3,18 +3,24 @@
 <head>
     <title>Зоренька</title>
     <style>
-        button {
-            margin: 10px;
-            padding: 15px 25px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .pdf-container {
-            display: none;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-top: 20px;
-        }
+         button {
+        padding: 14px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #1a1a1a;
+        background-color: #ff9900; /* небесноголубой background-color: #ff9900;  облепиховый цвет */
+        transition: background-color 0.2s, transform 0.1s;
+      } 
+      .buttons-container {
+        display: flex;
+        flex-direction: column;       /* КНОПКИ В СТОЛБИК */
+        gap: 12px;                    /* Расстояние между кнопками */
+        max-width: 320px;             /* Чтобы не растягивалось на весь экран */
+        margin: 0 auto;               /* По центру страницы */
+      }
     </style>
 </head>
 <body>

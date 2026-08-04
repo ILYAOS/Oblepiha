@@ -47,7 +47,21 @@
          
     </div>
    
+<button onclick="downloadPDF()">
+    Банкетное меню
+</button>
 
+<script>
+function downloadPDF() {
+    // Создаем элемент ссылки
+    const a = document.createElement('a');
+    a.href = 'https://disk.yandex.ru/i/K9oaHJouhZM96w?download=1';
+    a.setAttribute('download', 'банкетное_меню.pdf');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+</script>
     
 </body>
 </html>

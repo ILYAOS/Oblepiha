@@ -1,64 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Зоренька</title>
+    <meta charset="utf-8" />
+    <title>Зоренька — Таблица событий</title>
     <style>
-        button {
-            margin: 10px;
-            padding: 15px 25px;
-            font-size: 16px;
-            cursor: pointer;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
         }
-        .pdf-container {
-            display: none;
+        
+        th, td {
+            padding: 12px;
             border: 1px solid #ddd;
-            padding: 20px;
-            margin-top: 20px;
+            text-align: left;
         }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+         button {
+        padding: 14px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #1a1a1a;
+        background-color: #ff9900; /* небесноголубой background-color: #ff9900;  облепиховый цвет */
+        transition: background-color 0.2s, transform 0.1s;
+      } 
+      .buttons-container {
+        display: flex;
+        flex-direction: column;       /* КНОПКИ В СТОЛБИК */
+        gap: 12px;                    /* Расстояние между кнопками */
+        max-width: 320px;             /* Чтобы не растягивалось на весь экран */
+        margin: 0 auto;               /* По центру страницы */
+      }
     </style>
 </head>
 <body>
-
-    <!-- Кнопки управления -->
-    <button onclick="downloadAndShowPDF()">Банкетное меню</button>
-    <button>Зал торжеств</button>
-    <button>Назад</button>
-
-    <!-- Контейнер для PDF -->
-    <div class="pdf-container" id="pdfContainer">
-        <iframe id="pdfViewer" src="" width="100%" height="600px" frameborder="0"></iframe>
-        <button onclick="hidePdf()">Закрыть</button>
+    <div class="buttons-container">
+         <button onclick="window.location.href = 'https://disk.yandex.ru/i/K9oaHJouhZM96w'">Банкетное меню</button>
+         <button onclick="window.location.href = 'https://disk.yandex.ru/i/Z71B9jE2O09nRg'">Зал торжеств</button>
+         <button onclick="window.location.href = 'index.html'">Назад</button>
+         
     </div>
+   
 
-    <script>
-        // Функция для скачивания и показа PDF
-        async function downloadAndShowPDF() {
-            const yandexFileUrl = 'https://disk.yandex.ru/i/K9oaHJouhZM96w'; // замените на ваш ID файла
-            const downloadUrl = yandexFileUrl + '?download=1';
-            
-            try {
-                // Сначала скачиваем файл
-                const response = await fetch(downloadUrl);
-                if (!response.ok) {
-                    throw new Error('Ошибка при загрузке файла');
-                }
-                
-                // Создаем Blob из ответа
-                const blob = await response.blob();
-                const url = URL.createObjectURL(blob);
-                
-                // Показываем PDF
-                document.getElementById('pdfContainer').style.display = 'block';
-                document.getElementById('pdfViewer').src = url;
-            } catch (error) {
-                alert('Не удалось загрузить файл. Попробуйте скачать его вручную.');
-                window.open(downloadUrl, '_blank');
-            }
-        }
-
-        function hidePdf() {
-            document.getElementById('pdfContainer').style.display = 'none';
-        }
-    </script>
+    
 </body>
 </html>

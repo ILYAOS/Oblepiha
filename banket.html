@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Банкетный зал</title>
+    <title>Зоренька</title>
     <style>
         button {
             margin: 10px;
@@ -32,15 +32,14 @@
 
     <script>
         function showPdf() {
-            // Показываем контейнер с PDF
-            document.getElementById('pdfContainer').style.display = 'block';
+            // Укажите правильный путь к файлу
+            const pdfPath = 'https://disk.yandex.ru/i/K9oaHJouhZM96w'; // путь к файлу на вашем сервере
             
-            // Загружаем PDF файл
-            document.getElementById('pdfViewer').src = 'https://disk.yandex.ru/i/K9oaHJouhZM96w';
+            document.getElementById('pdfContainer').style.display = 'block';
+            document.getElementById('pdfViewer').src = pdfPath;
         }
 
         function hidePdf() {
-            // Скрываем контейнер
             document.getElementById('pdfContainer').style.display = 'none';
         }
     </script>

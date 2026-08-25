@@ -6,12 +6,6 @@ window.OBLEPIHA_CONTENT = [
     "key": "banket",
     "items": [
       {
-        "name": "Банкетное меню",
-        "kind": "pdf",
-        "group": "menu",
-        "url": "media/banket/01.pdf"
-      },
-      {
         "name": "Банкетный зал, который достоин нашей любви",
         "kind": "image",
         "group": "hall",
@@ -132,12 +126,6 @@ window.OBLEPIHA_CONTENT = [
         "url": "media/banket/21.jpg"
       },
       {
-        "name": "На фуршете всё выглядело как произведение искусства",
-        "kind": "image",
-        "group": "hall",
-        "url": "media/banket/22.jpg"
-      },
-      {
         "name": "Первый танец — навсегда",
         "kind": "image",
         "group": "celebration",
@@ -226,6 +214,74 @@ window.OBLEPIHA_CONTENT = [
         "kind": "image",
         "group": "celebration",
         "url": "media/banket/37.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Кафе",
+    "eyebrow": "Домашняя кухня",
+    "description": "Домашние блюда, щедрые порции и атмосфера, \nв которой хочется задержаться",
+    "key": "cafe",
+    "items": [
+      {
+        "name": "Кафе · фото 1",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/01.jpg"
+      },
+      {
+        "name": "Кафе · фото 2",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/02.jpg"
+      },
+      {
+        "name": "Кафе · фото 3",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/03.jpg"
+      },
+      {
+        "name": "Кафе · фото 4",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/04.jpg"
+      },
+      {
+        "name": "Кафе · фото 5",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/05.jpg"
+      },
+      {
+        "name": "Кафе · фото 6",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/06.jpg"
+      },
+      {
+        "name": "Кафе · фото 7",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/07.jpg"
+      },
+      {
+        "name": "Кафе · фото 8",
+        "kind": "image",
+        "group": "image",
+        "url": "media/cafe/08.jpg"
+      },
+      {
+        "name": "Кафе · видео 1",
+        "kind": "video",
+        "group": "video",
+        "url": "media/cafe/09.mp4"
+      },
+      {
+        "name": "Кафе · видео 2",
+        "kind": "video",
+        "group": "video",
+        "url": "media/cafe/10.mp4"
       }
     ]
   },

@@ -1,102 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <title>Мини‑приложение MAX</title>
-    <script src="https://st.max.ru/js/max-web-app.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 20px;
-        background-color: #ffffff;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .container {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-      h1 {
-        text-align: center;
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 24px;
-      }
-      .buttons-container {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      button {
-        padding: 14px 16px;
-        border: none;
-        border-radius: 8px;
-        font-size: 15px;
-        font-weight: 500;
-        cursor: pointer;
-        color: #1a1a1a;
-        background-color: #ff9900; /* облепиховый цвет */
-        transition: background-color 0.2s, transform 0.1s;
-      }
-      button:active {
-        transform: scale(0.98);
-      }
-      button:hover {
-        background-color: #e68a00;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1 id="user-id-name"></h1>
-      <div class="buttons-container">
-        <button onclick="window.location.href = 'banket.html'">Банкетный зал ОБЛЕПИХА</button>
-        <button onclick="openFile('НАШИ_НОМЕРА')">Ваш дом вдали от дома</button>
-        <!-- <button onclick="openFile('музей')">Пространство прошлого</button> -->
-        <button onclick="openFile('САУНА')">Территория тепла (сауна)</button>
-        <button onclick="openFile('АНОНС_МЕРОПРИЯТИЙ')">Анонс мероприятий</button>
-      </div>
-    </div>
-   <script src="https://st.max.ru/js/max-web-app.js"></script>
-  <script>
-    if (window.WebApp) {
-      window.WebApp.ready();
-      const initDataUnsafe = window.WebApp.initDataUnsafe;
-      const user = initDataUnsafe?.user;
-      if (user) {
-         const gg = user.first_name; 
-         const e2 = document.getElementById('user-id-name');
-         e2.textContent = `Здравствуйте, ${gg}`;}
-       else {
-      console.warn('Данные пользователя недоступны — возможно, приложение запущено не в MAX');
-    }
-  } else {
-    console.error('WebApp не определён. Проверьте, что страница открыта в MAX и скрипт загружен.');
-  }
-</script>
-    <script>
-      // Замените эти ссылки на публичные ссылки ваших файлов на Яндекс Диске
-      const files = {
-        'МЕНЮ': 'https://disk.yandex.ru/i/ei_iPdH4ZJ502Q',
-        //'музей' : 'https://drive.google.com/drive/folders/1iLzQZLtZYnmu6wX4NquBWxpE_OdyC0S3?usp=sharing',
-        'НАШИ_НОМЕРА': 'https://drive.google.com/drive/folders/1WctDu_-OnlIyD7QYrAZKY_PRF4Yp626I?usp=sharing',
-        'САУНА': 'https://drive.google.com/drive/folders/1hMjwKDAFLcTph1A3_rUQPYB1njxsDq29?usp=sharing',
-        'АНОНС_МЕРОПРИЯТИЙ': 'https://disk.yandex.ru/i/Cv8ln8E5qbZyaw'
-      };
-
-      function openFile(key) {
-        const url = files[key];
-        if (!url || url.includes('ВАША_ССЫЛКА')) {
-          alert('Ссылка на файл не настроена. Замените её в коде.');
-          return;
-        }
-        // MAX Bridge: открываем ссылку внутри среды MAX
-        if (window.max && window.max.openUrl) {
-          window.max.openUrl(url);
-        } else {
-          // Фоллбэк: если MAX Bridge не инициализирован — открываем в новой вкладке
-          window.open(url, '_blank');
-        }
-      }
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4efe6">
+  <meta name="color-scheme" content="light">
+  <title>Облепиха</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://st.max.ru/js/max-web-app.js" defer></script>
+  <script src="media-manifest.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <div class="soft-glow glow-one"></div>
+    <div class="soft-glow glow-two"></div>
+    <header class="nav" id="nav" hidden>
+      <button class="back" id="back-button" type="button" aria-label="Вернуться на главную">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        Назад
+      </button>
+    </header>
+    <div id="content"></div>
+  </main>
+  <div id="overlay-root"></div>
+</body>
 </html>

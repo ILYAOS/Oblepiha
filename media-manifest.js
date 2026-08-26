@@ -354,6 +354,42 @@ window.OBLEPIHA_CONTENT = [
     "key": "sauna",
     "items": [
       {
+        "name": "Спойлер из этой сауны не хочется уходить",
+        "kind": "image",
+        "group": "image",
+        "url": "media/sauna/06.jpg"
+      },
+      {
+        "name": "Сауна",
+        "kind": "image",
+        "group": "image",
+        "url": "media/sauna/08.jpg"
+      },
+      {
+        "name": "Сауна",
+        "kind": "image",
+        "group": "image",
+        "url": "media/sauna/09.jpg"
+      },
+      {
+        "name": "Сауна",
+        "kind": "image",
+        "group": "image",
+        "url": "media/sauna/10.jpg"
+      },
+      {
+        "name": "Сауна",
+        "kind": "image",
+        "group": "image",
+        "url": "media/sauna/11.jpg"
+      },
+      {
+        "name": "Сауна",
+        "kind": "image",
+        "group": "image",
+        "url": "media/sauna/12.jpg"
+      },
+      {
         "name": "Банный день — лучший день",
         "kind": "video",
         "group": "video",
@@ -382,12 +418,6 @@ window.OBLEPIHA_CONTENT = [
         "kind": "video",
         "group": "video",
         "url": "media/sauna/05.mp4"
-      },
-      {
-        "name": "Спойлер из этой сауны не хочется уходить",
-        "kind": "image",
-        "group": "image",
-        "url": "media/sauna/06.jpg"
       },
       {
         "name": "Уютная зона для того, чтобы никуда не спешить",
